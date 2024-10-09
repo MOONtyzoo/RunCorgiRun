@@ -17,13 +17,22 @@ public class Corgi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        KeepOnScreen();
     }
 
     public void Move(Vector2 moveDir) {
         Vector2 velocity = moveDir*speed*Time.deltaTime;
         transform.Translate((Vector3)velocity);
 
+        TurnSprite(moveDir);
+    }
+
+    public void KeepOnScreen() {
+        Vector3 constrainedPosition = SpriteTools.ConstrainToScreen(sprite);
+        transform.position = constrainedPosition;
+    }
+
+    public void TurnSprite(Vector2 moveDir) {
         if (moveDir.x > 0) {
             sprite.flipX = false;
         } else if (moveDir.x < 0) {

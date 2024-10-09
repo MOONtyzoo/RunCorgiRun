@@ -5,6 +5,7 @@ using UnityEngine;
 public class KeyboardInput : MonoBehaviour
 {
     public Corgi corgi;
+    public PoopPlacer poopPlacer;
 
     // Start is called before the first frame update
     void Start()
@@ -20,5 +21,9 @@ public class KeyboardInput : MonoBehaviour
 
         Vector2 inputVector = new Vector2(horizontalAxis, verticalAxis).normalized;
         corgi.Move(inputVector);
+
+        if (Input.GetKey(KeyCode.Space)) {
+            //PoopPlacer.place();
+        }
     }
 }
