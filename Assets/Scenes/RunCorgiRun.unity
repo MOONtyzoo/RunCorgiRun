@@ -153,6 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   corgi: {fileID: 862240920}
   poopPlacer: {fileID: 793563590}
+  beerPlacer: {fileID: 793563592}
 --- !u!4 &234487160
 Transform:
   m_ObjectHideFlags: 0
@@ -272,6 +273,7 @@ GameObject:
   m_Component:
   - component: {fileID: 793563591}
   - component: {fileID: 793563590}
+  - component: {fileID: 793563592}
   m_Layer: 0
   m_Name: Placers
   m_TagString: Untagged
@@ -291,6 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6adbc6406ca101a4ca8084d9dc3375a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poopPrefab: {fileID: 4875393541311542532, guid: 4d1ccd74c42c5e44fb21ff90a66d241f, type: 3}
 --- !u!4 &793563591
 Transform:
   m_ObjectHideFlags: 0
@@ -306,6 +309,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &793563592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793563589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eec3a5b49085c444097d6ee183c2553f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beerPrefab: {fileID: -5830038589803269911, guid: 52df7f5568caf994e9608cf25ec10aae, type: 3}
 --- !u!1 &862240917
 GameObject:
   m_ObjectHideFlags: 0

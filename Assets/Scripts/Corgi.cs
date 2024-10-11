@@ -27,16 +27,16 @@ public class Corgi : MonoBehaviour
         TurnSprite(moveDir);
     }
 
-    public void KeepOnScreen() {
-        Vector3 constrainedPosition = SpriteTools.ConstrainToScreen(sprite);
-        transform.position = constrainedPosition;
-    }
-
     public void TurnSprite(Vector2 moveDir) {
         if (moveDir.x > 0) {
             sprite.flipX = false;
         } else if (moveDir.x < 0) {
             sprite.flipX = true;
         }
+    }
+
+    public void KeepOnScreen() {
+        Vector3 constrainedPosition = SpriteTools.ConstrainToScreen(sprite);
+        transform.position = constrainedPosition;
     }
 }

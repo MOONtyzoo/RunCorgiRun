@@ -6,8 +6,7 @@ public class PoopPlacer : MonoBehaviour
 {
     public Poop poopPrefab;
 
-    public void PlacePoop(Vector2 position) {
-
-        //Poop poop = Instantiate(poopPrefab, new Vector3(1,1,1))
+    public void Place(Vector2 position) {
+        Poop poop = Instantiate(poopPrefab, new Vector3(position.x, position.y ,1), Quaternion.identity);
     }
 }

@@ -6,14 +6,8 @@ public class KeyboardInput : MonoBehaviour
 {
     public Corgi corgi;
     public PoopPlacer poopPlacer;
+    public BeerPlacer beerPlacer;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         float horizontalAxis = Input.GetAxis("Horizontal");
@@ -22,8 +16,8 @@ public class KeyboardInput : MonoBehaviour
         Vector2 inputVector = new Vector2(horizontalAxis, verticalAxis).normalized;
         corgi.Move(inputVector);
 
-        if (Input.GetKey(KeyCode.Space)) {
-            //PoopPlacer.place();
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            poopPlacer.Place(corgi.transform.position);
         }
     }
 }
