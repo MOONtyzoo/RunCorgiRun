@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Corgi : MonoBehaviour
 {
-    public float speed = 1.0f;
-
+    private float moveSpeed = 5.0f;
+    
+    public new Rigidbody2D rigidbody;
     public SpriteRenderer sprite;
 
     // Start is called before the first frame update
     void Start()
     {
+        moveSpeed = GameParameters.CorgiMoveSpeed;
         
     }
 
@@ -20,10 +22,13 @@ public class Corgi : MonoBehaviour
         KeepOnScreen();
     }
 
-    public void Move(Vector2 moveDir) {
-        Vector2 velocity = moveDir*speed*Time.deltaTime;
-        transform.Translate((Vector3)velocity);
+    void OnCollisionEnter() {
+        print("HELLO");
+    }
 
+    public void Move(Vector2 moveDir) {
+        Vector2 velocity = moveDir*moveSpeed*Time.deltaTime;
+        rigidbody.position += velocity;
         TurnSprite(moveDir);
     }
 

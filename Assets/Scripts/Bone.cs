@@ -2,17 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bone : MonoBehaviour
+public class Bone : TimedLifeSpan
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void Start() {
+        lifetime = GameParameters.BoneLifetime;
     }
 }
+

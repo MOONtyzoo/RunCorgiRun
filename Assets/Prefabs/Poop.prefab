@@ -97,5 +97,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb0cc9f5574fe244a446549e7bdb797, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poopSprite: {fileID: 3200754619612022447}
-  poopLifetime: 4
+  sprite: {fileID: 3200754619612022447}
+  lifetime: 5

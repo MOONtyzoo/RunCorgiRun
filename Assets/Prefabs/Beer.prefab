@@ -97,5 +97,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 375c65dee4607dd48a5bf23c59c125a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beerSprite: {fileID: 7252261010308244825}
-  beerLifetime: 4
+  sprite: {fileID: 7252261010308244825}
+  lifetime: 5
