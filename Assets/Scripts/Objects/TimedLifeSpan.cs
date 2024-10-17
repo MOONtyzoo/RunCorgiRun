@@ -5,7 +5,7 @@ using UnityEngine;
 public class TimedLifeSpan : MonoBehaviour
 {
     public SpriteRenderer sprite;
-    public float lifetime;
+    protected float lifetime;
 
     void Update()
     {
