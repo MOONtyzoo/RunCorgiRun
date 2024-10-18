@@ -275,6 +275,7 @@ GameObject:
   - component: {fileID: 793563590}
   - component: {fileID: 793563592}
   - component: {fileID: 793563593}
+  - component: {fileID: 793563594}
   m_Layer: 0
   m_Name: Placers
   m_TagString: Untagged
@@ -294,7 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6adbc6406ca101a4ca8084d9dc3375a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poopPrefab: {fileID: 4875393541311542532, guid: 4d1ccd74c42c5e44fb21ff90a66d241f, type: 3}
+  objectPrefab: {fileID: 3284137195403497548, guid: 4d1ccd74c42c5e44fb21ff90a66d241f, type: 3}
 --- !u!4 &793563591
 Transform:
   m_ObjectHideFlags: 0
@@ -322,9 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eec3a5b49085c444097d6ee183c2553f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beerPrefab: {fileID: -5830038589803269911, guid: 52df7f5568caf994e9608cf25ec10aae, type: 3}
-  spawnRateAverage: 2
-  spawnRateRange: 1.5
+  objectPrefab: {fileID: 700416219604595528, guid: 52df7f5568caf994e9608cf25ec10aae, type: 3}
 --- !u!114 &793563593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,9 +336,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 155f835c6bb477044ac17ca1880e435d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bonePrefab: {fileID: 8939661328808989976, guid: 133ccbde29b8cd445af03c4ed6a4bb65, type: 3}
-  spawnRateAverage: 6
-  spawnRateRange: 2
+  objectPrefab: {fileID: 1790951066413676859, guid: 133ccbde29b8cd445af03c4ed6a4bb65, type: 3}
+--- !u!114 &793563594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793563589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50823a22a5a73db44a3a17762ca3a607, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefab: {fileID: 8729195040879827248, guid: 477d8bb68f609594e831bfd60c3149d4, type: 3}
 --- !u!1 &862240917
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,7 +461,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 862240917}
   m_BodyType: 0
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0

@@ -22,6 +22,10 @@ public class Corgi : MonoBehaviour
         KeepOnScreen();
     }
 
+    void OnTriggerEnter2D(Collider2D collider) {
+        print(collider.gameObject.name);
+    }
+
     public void Move(Vector2 moveDir) {
         Vector2 velocity = moveDir*moveSpeed*Time.deltaTime;
         rigidbody.position += velocity;
