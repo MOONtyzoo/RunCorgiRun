@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Poop : TimedLifeSpan
+public class Poop : Pickup
 {
     public void Start() {
         lifetime = GameParameters.PoopLifetime;

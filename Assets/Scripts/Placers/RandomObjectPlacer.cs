@@ -11,7 +11,7 @@ public class RandomObjectPlacer : MonoBehaviour
         Object newObject = Instantiate(objectPrefab, new Vector3(position.x, position.y ,1), Quaternion.identity);
     }
 
-    public IEnumerator ObjectSpawner() {
+    public virtual IEnumerator ObjectSpawner() {
         while (true) {
             Place(SpriteTools.RandomLocationWorldSpace());
             yield return new WaitForSeconds(spawnCooldownRange.GetRandomNumber());

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimedLifeSpan : MonoBehaviour
+public class Pickup : MonoBehaviour
 {
     public SpriteRenderer sprite;
     protected float lifetime;
@@ -11,10 +11,14 @@ public class TimedLifeSpan : MonoBehaviour
     {
         lifetime -= Time.deltaTime;
         if (lifetime <= 0) {
-            Destroy(this);
+            Destroy(gameObject);
         } else if (lifetime <= 1) {
             Fade();
         }
+    }
+
+    public virtual void PickUp() {
+        Destroy(gameObject);
     }
 
     void Fade() {

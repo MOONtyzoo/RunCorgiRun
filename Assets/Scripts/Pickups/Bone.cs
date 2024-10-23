@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bone : TimedLifeSpan
+public class Bone : Pickup
 {
     public void Start() {
         lifetime = GameParameters.BoneLifetime;
