@@ -7,7 +7,7 @@ public class Pickup : MonoBehaviour
     public SpriteRenderer sprite;
     protected float lifetime;
 
-    void Update()
+    protected virtual void Update()
     {
         lifetime -= Time.deltaTime;
         if (lifetime <= 0) {
