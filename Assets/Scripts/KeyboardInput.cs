@@ -19,5 +19,9 @@ public class KeyboardInput : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)) {
             poopPlacer.Place(corgi.transform.position);
         }
+
+        if (Input.GetKeyDown(KeyCode.Q)) {
+            Application.Quit();
+        }
     }
 }

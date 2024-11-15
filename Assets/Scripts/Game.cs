@@ -11,7 +11,6 @@ public class Game : MonoBehaviour
     private int score;
 
     private int secondsInGame;
-    private int gameplayDuration = 5;
     private Coroutine gameplayTimerCoroutine;
 
     void Awake() {
@@ -24,25 +23,17 @@ public class Game : MonoBehaviour
 
     void Start()
     {
-        ui.ShowStartScreen();
-        ui.HideGameOverScreen();
+        StartGame();        
     }
 
     public void StartGame() {
-        ui.HideStartScreen();
-        ui.HideGameOverScreen();
-        ui.ShowGameInfoPanel();
-        Reset();
-    }
-
-    public void Reset() {
         SetScore(0);
         SetSecondsInGame(0);
         StartCoroutine(gameTimer());
     }
 
     private IEnumerator gameTimer() {
-        while (secondsInGame < gameplayDuration) {
+        while (secondsInGame < GameParameters.GameplayDuration) {
             yield return new WaitForSeconds(1);
             SetSecondsInGame(secondsInGame + 1);
         }
@@ -50,10 +41,11 @@ public class Game : MonoBehaviour
     }
 
     private void EndGame() {
-        ui.ShowGameOverScreen();
-        ui.HideGameInfoPanel();
-        if (gameplayTimerCoroutine != null)
-            StopCoroutine(gameplayTimerCoroutine);
+        GameStatistics.lastGameScore = score;
+        if (GameStatistics.lastGameScore > GameStatistics.highScore)
+            GameStatistics.highScore = score;
+        
+        SceneLoader.Load(SceneLoader.Scene.GameOverMenu);
     }
 
     public void AddScore(int amount) {
@@ -67,6 +59,10 @@ public class Game : MonoBehaviour
 
     public void SetSecondsInGame(int newSecondsInGame) {
         secondsInGame = newSecondsInGame;
-        ui.UpdateTimerText(gameplayDuration - secondsInGame);
+        ui.UpdateTimerText(GameParameters.GameplayDuration - secondsInGame);
+    }
+
+    public float GetTimerProgressPercentage() {
+        return (float)secondsInGame/GameParameters.GameplayDuration;
     }
 }
