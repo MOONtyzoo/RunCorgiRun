@@ -35,7 +35,6 @@ public class Corgi : MonoBehaviour
 
     void Update()
     {
-        KeepOnScreen();
         UpdateRandomMoveDirection();
         if (isPlastered) {
             Move(lastRandomMoveDirection);
@@ -124,10 +123,5 @@ public class Corgi : MonoBehaviour
         } else if (moveDir.x < 0) {
             spriteRenderer.flipX = true;
         }
-    }
-
-    public void KeepOnScreen() {
-        Vector3 constrainedPosition = SpriteTools.ConstrainToScreen(spriteRenderer);
-        transform.position = constrainedPosition;
     }
 }

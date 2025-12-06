@@ -9,7 +9,7 @@ public static class SceneLoader
     public enum Scene {
         StartScreen,
         Game,
-        GameOverScreen
+        GameOverMenu
     }
 
     public static void Load(Scene scene) {
