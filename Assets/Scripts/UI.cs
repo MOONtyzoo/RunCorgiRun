@@ -9,6 +9,14 @@ public class UI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI timerText;
+    [SerializeField] private TextMeshProUGUI debugStateText;
+
+    [SerializeField] private Corgi player;
+
+    private void Awake()
+    {
+        player.OnStateChanged += OnPlayerStateChanged;
+    }
 
     public void UpdateScoreText(int score) {
         scoreText.text = "Score: " + score;
@@ -21,7 +29,7 @@ public class UI : MonoBehaviour
         timerText.text = GetTimeAsString(timeInSeconds);
     }
 
-    public string GetTimeAsString(int timeInSeconds) {
+    private string GetTimeAsString(int timeInSeconds) {
         int seconds = timeInSeconds % 60;
         int minutes = (timeInSeconds) / 60;
 
@@ -33,5 +41,10 @@ public class UI : MonoBehaviour
         string minutesText = minutes.ToString();
 
         return minutesText + ":" + secondsText;
+    }
+
+    private void OnPlayerStateChanged(Corgi.States oldState, Corgi.States newState)
+    {
+        debugStateText.text = newState.ToString();
     }
 }
