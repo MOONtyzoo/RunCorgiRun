@@ -6,6 +6,7 @@ public class Corgi : MonoBehaviour
 {
     public event Action<States, States> OnStateChanged;
     public event Action<Vector2> OnMoved;
+    public event Action<string> OnPickUp;
 
     [SerializeField] private PlayerParameters playerParameters;
     
@@ -43,10 +44,13 @@ public class Corgi : MonoBehaviour
         else if (other.CompareTag("Pill")) 
         {
             SoberUp();
+            
+            OnPickUp?.Invoke("Pill");
         }
         else if (other.CompareTag("Bone")) 
         {
             Game.Instance.AddScore(1);
+            OnPickUp?.Invoke("Bone");
         }
 
         if (other.TryGetComponent(out Pickup pickup)) {

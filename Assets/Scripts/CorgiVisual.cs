@@ -12,6 +12,8 @@ public class CorgiVisual : MonoBehaviour
     [Header("Particles")]
     [SerializeField] private ParticleSystem drunkParticles;
     [SerializeField] private ParticleSystem plasteredParticles;
+    [SerializeField] private ParticleSystem pillParticles;
+    [SerializeField] private ParticleSystem boneParticles;
     
     private SpriteRenderer spriteRenderer;
 
@@ -20,6 +22,7 @@ public class CorgiVisual : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         corgi.OnStateChanged += OnCorgiStateChanged;
         corgi.OnMoved += OnCorgiMoved;
+        corgi.OnPickUp += OnPickUp;
     }
 
     private void OnCorgiStateChanged(Corgi.States oldState, Corgi.States newState)
@@ -46,6 +49,18 @@ public class CorgiVisual : MonoBehaviour
     private void OnCorgiMoved(Vector2 moveDelta)
     {
         TurnSprite(moveDelta.normalized);
+    }
+
+    private void OnPickUp(string pickupName)
+    {
+        if (pickupName == "Bone")
+        {
+            boneParticles.Play();
+        }
+        else if (pickupName == "Pill")
+        {
+            pillParticles.Play();
+        }
     }
     
     private void TurnSprite(Vector2 moveDir) {
