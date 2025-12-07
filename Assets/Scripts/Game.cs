@@ -41,9 +41,9 @@ public class Game : MonoBehaviour
     }
 
     private void EndGame() {
+        if (score > GameStatistics.GetHighScore())
+            GameStatistics.SetHighScore(score);
         GameStatistics.lastGameScore = score;
-        if (GameStatistics.lastGameScore > GameStatistics.highScore)
-            GameStatistics.highScore = score;
         
         SceneLoader.Load(SceneLoader.Scene.GameOverMenu);
     }

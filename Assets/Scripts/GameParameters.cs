@@ -6,7 +6,7 @@ using UnityEngine;
 
 public static class GameParameters
 {
-    public static int GameplayDuration = 60;
+    public static int GameplayDuration = 10;
 
     public static float CorgiMoveSpeed = 7.5f;
     public static float CorgiDrunkSeconds = 3.0f;

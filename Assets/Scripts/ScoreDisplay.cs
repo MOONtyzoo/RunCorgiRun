@@ -10,6 +10,6 @@ public class ScoreDisplay : MonoBehaviour
 
     void Start() {
         scoreText.text = "Score: " + GameStatistics.lastGameScore;
-        highScoreText.text = "High Score: " + GameStatistics.highScore;
+        highScoreText.text = "High Score: " + GameStatistics.GetHighScore();
     }
 }
