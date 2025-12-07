@@ -5,15 +5,11 @@ using UnityEngine;
 public class Corgi : MonoBehaviour
 {
     public event Action<States, States> OnStateChanged;
+    public event Action<Vector2> OnMoved;
 
     [SerializeField] private PlayerParameters playerParameters;
     
     private Rigidbody2D rbody;
-
-    [Header("Sprite")]
-    [SerializeField] private SpriteRenderer spriteRenderer;
-    [SerializeField] private Sprite normalSprite;
-    [SerializeField] private Sprite drunkSprite;
     
     private Coroutine countdownUntilSoberCoroutine;
 
@@ -60,15 +56,15 @@ public class Corgi : MonoBehaviour
     
     public void Move(Vector2 moveDir) {
         Vector2 velocity = moveDir*playerParameters.MoveSpeed;
-        rbody.position += velocity * Time.deltaTime;
-        TurnSprite(moveDir);
+        Vector2 movementDelta = velocity * Time.deltaTime;
+        rbody.position += movementDelta;
+        OnMoved?.Invoke(movementDelta);
     }
 
     private void GetDrunk() {
         if (state == States.Normal)
         {
             SwitchState(States.Drunk);
-            spriteRenderer.sprite = drunkSprite;
             countdownUntilSoberCoroutine = StartCoroutine(CountdownUntilSober());
         }
     }
@@ -76,7 +72,6 @@ public class Corgi : MonoBehaviour
         if (state != States.Plastered)
         {
             SwitchState(States.Plastered);
-            spriteRenderer.sprite = drunkSprite;
             countdownUntilSoberCoroutine = StartCoroutine(CountdownUntilSober());
         }
     }
@@ -90,7 +85,6 @@ public class Corgi : MonoBehaviour
         if (state == States.Drunk || state == States.Plastered)
         {
             SwitchState(States.Normal);
-            spriteRenderer.sprite = normalSprite;
             StopCoroutine(countdownUntilSoberCoroutine);
         }
     }
@@ -99,13 +93,5 @@ public class Corgi : MonoBehaviour
     {
         OnStateChanged?.Invoke(state, newState);
         state = newState;
-    }
-
-    private void TurnSprite(Vector2 moveDir) {
-        if (moveDir.x > 0) {
-            spriteRenderer.flipX = false;
-        } else if (moveDir.x < 0) {
-            spriteRenderer.flipX = true;
-        }
     }
 }
