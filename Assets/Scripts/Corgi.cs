@@ -1,123 +1,100 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Corgi : MonoBehaviour
 {
+    public event Action<States, States> OnStateChanged;
+    
     public new Rigidbody2D rigidbody;
 
     [Header("Sprite")]
     public SpriteRenderer spriteRenderer;
     public Sprite normalSprite;
     public Sprite drunkSprite;
-
-    private float moveSpeed;
-    private float drunkenMoveSpeed;
-    private float plasteredMoveSpeed;
-    private float drunkSeconds;
-
-    private bool isDrunk = false;
-    private bool isPlastered = false;
+    
     private Coroutine countdownUntilSoberCoroutine;
 
-    private Vector2 lastRandomMoveDirection = Vector2.zero;
-    private float randomMoveCountdownLength = 0.1f;
-    private float randomMoveCounter = 0.0f;
-
-    void Start()
+    public enum States
     {
-        moveSpeed = GameParameters.CorgiMoveSpeed;
-        drunkenMoveSpeed = GameParameters.CorgiDrunkenMoveSpeed;
-        plasteredMoveSpeed = GameParameters.CorgiPlasteredMoveSpeed;
-        drunkSeconds = GameParameters.CorgiDrunkSeconds;
+        Normal,
+        Drunk,
+        Plastered,
+    }
+    private States state = States.Normal;
+
+    private void Start()
+    {
+        SwitchState(States.Normal);
     }
 
-    void Update()
-    {
-        UpdateRandomMoveDirection();
-        if (isPlastered) {
-            Move(lastRandomMoveDirection);
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D other) {
-        if (other.tag == "Beer") {
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.CompareTag("Beer")) 
+        {
             GetDrunk();
-        } else if (other.tag == "Moonshine") {
+        }
+        else if (other.CompareTag("Moonshine")) 
+        {
             GetPlastered();
-        } else if (other.tag == "Pill") {
+        }
+        else if (other.CompareTag("Pill")) 
+        {
             SoberUp();
-        } else if (other.tag == "Bone") {
+        }
+        else if (other.CompareTag("Bone")) 
+        {
             Game.Instance.AddScore(1);
         }
 
-        if (other.tag == "Beer" || other.tag == "Moonshine" || other.tag == "Bone" || other.tag == "Pill") {
-            Pickup pickup = other.gameObject.GetComponent<Pickup>();
+        if (other.TryGetComponent(out Pickup pickup)) {
             pickup.PickUp();
         }
     }
+    
+    public void Move(Vector2 moveDir) {
+        Vector2 velocity = moveDir*GameParameters.CorgiMoveSpeed;
+        rigidbody.position += velocity * Time.deltaTime;
+        TurnSprite(moveDir);
+    }
 
     private void GetDrunk() {
-        if (!isDrunk) {
-            isDrunk = true;
+        if (state == States.Normal)
+        {
+            SwitchState(States.Drunk);
+            spriteRenderer.sprite = drunkSprite;
+            countdownUntilSoberCoroutine = StartCoroutine(CountdownUntilSober());
+        }
+    }
+    private void GetPlastered() {
+        if (state != States.Plastered)
+        {
+            SwitchState(States.Plastered);
             spriteRenderer.sprite = drunkSprite;
             countdownUntilSoberCoroutine = StartCoroutine(CountdownUntilSober());
         }
     }
 
     private IEnumerator CountdownUntilSober() {
-        yield return new WaitForSeconds(drunkSeconds);
+        yield return new WaitForSeconds(GameParameters.CorgiDrunkSeconds);
         SoberUp();
     }
 
-    private void GetPlastered() {
-        if (!isPlastered) {
-            isPlastered = true;
-            spriteRenderer.sprite = drunkSprite;
-            countdownUntilSoberCoroutine = StartCoroutine(CountdownUntilSober());
-        }
-    }
-
     private void SoberUp() {
-        if (isDrunk || isPlastered) {
-            isDrunk = false;
-            isPlastered = false;
+        if (state == States.Drunk || state == States.Plastered)
+        {
+            SwitchState(States.Normal);
             spriteRenderer.sprite = normalSprite;
             StopCoroutine(countdownUntilSoberCoroutine);
         }
     }
-
-    public void Move(Vector2 moveDir) {
-        float speed = 0;
-        if (isPlastered) {
-            speed = plasteredMoveSpeed;
-        } else if (isDrunk) {
-            speed = drunkenMoveSpeed;
-        } else {
-            speed = moveSpeed;
-        }
-        Vector2 velocity = moveDir*speed*Time.deltaTime;
-        
-        rigidbody.position += velocity;
-        TurnSprite(moveDir);
+    
+    private void SwitchState(States newState)
+    {
+        OnStateChanged?.Invoke(state, newState);
+        state = newState;
     }
 
-    public void UpdateRandomMoveDirection() {
-        randomMoveCounter -= Time.deltaTime;
-        if (randomMoveCounter <= 0) {
-            randomMoveCounter = randomMoveCountdownLength;
-            lastRandomMoveDirection = GetRandomDirection();
-        }
-    }
-
-    public Vector2 GetRandomDirection() {
-        int randomAngle = Random.Range(-180, 180);
-        Vector2 randomDir = Quaternion.Euler(0, 0, randomAngle) * Vector2.up;
-        return randomDir;
-    }
-
-    public void TurnSprite(Vector2 moveDir) {
+    private void TurnSprite(Vector2 moveDir) {
         if (moveDir.x > 0) {
             spriteRenderer.flipX = false;
         } else if (moveDir.x < 0) {
