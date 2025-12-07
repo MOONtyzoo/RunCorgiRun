@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d548c25472bc14742a8230961531aef9, type: 3}
-  m_Name: BoneSo
-  m_EditorClassIdentifier: Assembly-CSharp::BoneSo
-  boneLifetime: 10
-  boneSpawnerCooldownRange:
-    minNumber: 0.7
-    maxNumber: 1.5
+  m_Script: {fileID: 11500000, guid: 33b287a30a6b84aa9bd431c2b32c836c, type: 3}
+  m_Name: GameStats
+  m_EditorClassIdentifier: Assembly-CSharp::GameParameters
+  gameplayDuration: 60

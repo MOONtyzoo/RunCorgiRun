@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 753d42b7e60f14f4090e38c2fd9b967a, type: 3}
-  m_Name: PoopSo
-  m_EditorClassIdentifier: Assembly-CSharp::PoopSo
-  poopLifetime: 5
+  m_Script: {fileID: 11500000, guid: d548c25472bc14742a8230961531aef9, type: 3}
+  m_Name: BoneStats
+  m_EditorClassIdentifier: Assembly-CSharp::BoneSo
+  boneLifetime: 10
+  boneSpawnerCooldownRange:
+    minNumber: 0.7
+    maxNumber: 1.5

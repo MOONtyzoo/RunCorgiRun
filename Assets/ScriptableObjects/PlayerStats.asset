@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33b287a30a6b84aa9bd431c2b32c836c, type: 3}
-  m_Name: GameParameters
-  m_EditorClassIdentifier: Assembly-CSharp::GameParameters
-  gameplayDuration: 60
+  m_Script: {fileID: 11500000, guid: c95961ebc52ee4b30b55b74e2b96583a, type: 3}
+  m_Name: PlayerStats
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerParameters
+  moveSpeed: 7.5
+  drunkDuration: 5

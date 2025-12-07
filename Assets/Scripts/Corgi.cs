@@ -5,13 +5,15 @@ using UnityEngine;
 public class Corgi : MonoBehaviour
 {
     public event Action<States, States> OnStateChanged;
+
+    [SerializeField] private PlayerParameters playerParameters;
     
-    public new Rigidbody2D rigidbody;
+    private Rigidbody2D rbody;
 
     [Header("Sprite")]
-    public SpriteRenderer spriteRenderer;
-    public Sprite normalSprite;
-    public Sprite drunkSprite;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Sprite normalSprite;
+    [SerializeField] private Sprite drunkSprite;
     
     private Coroutine countdownUntilSoberCoroutine;
 
@@ -22,6 +24,11 @@ public class Corgi : MonoBehaviour
         Plastered,
     }
     private States state = States.Normal;
+
+    private void Awake()
+    {
+        rbody = GetComponent<Rigidbody2D>();
+    }
 
     private void Start()
     {
@@ -52,8 +59,8 @@ public class Corgi : MonoBehaviour
     }
     
     public void Move(Vector2 moveDir) {
-        Vector2 velocity = moveDir*GameParameters.CorgiMoveSpeed;
-        rigidbody.position += velocity * Time.deltaTime;
+        Vector2 velocity = moveDir*playerParameters.MoveSpeed;
+        rbody.position += velocity * Time.deltaTime;
         TurnSprite(moveDir);
     }
 
@@ -75,7 +82,7 @@ public class Corgi : MonoBehaviour
     }
 
     private IEnumerator CountdownUntilSober() {
-        yield return new WaitForSeconds(GameParameters.CorgiDrunkSeconds);
+        yield return new WaitForSeconds(playerParameters.DrunkDuration);
         SoberUp();
     }
 

@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5b31e8eadde74eec95d93a613339fef, type: 3}
-  m_Name: BeerSo
-  m_EditorClassIdentifier: Assembly-CSharp::BeerSo
-  beerLifetime: 7.5
-  beerSpawnerCooldownRange:
-    minNumber: 0.7
-    maxNumber: 1.8
+  m_Script: {fileID: 11500000, guid: 93ddc6a93100d4cb5b12740a823dab4a, type: 3}
+  m_Name: PillStats
+  m_EditorClassIdentifier: Assembly-CSharp::PillSo
+  pillLifetime: 30
+  pillSpawnerCooldownRange:
+    minNumber: 6.5
+    maxNumber: 10.5

@@ -836,11 +836,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e596c56e8bf58438c2285736a3b29f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidbody: {fileID: 862240921}
+  playerParameters: {fileID: 11400000, guid: af018850bdd534ee49edbddd1e1e9012, type: 2}
   spriteRenderer: {fileID: 862240918}
   normalSprite: {fileID: 21300000, guid: 0546157fe52f78145aa6e1c0dac21450, type: 3}
   drunkSprite: {fileID: 21300000, guid: 3a411a3647b9ac54f9245d1d4026c363, type: 3}
-  playerParameters: {fileID: 11400000, guid: af018850bdd534ee49edbddd1e1e9012, type: 2}
 --- !u!50 &862240921
 Rigidbody2D:
   serializedVersion: 5
