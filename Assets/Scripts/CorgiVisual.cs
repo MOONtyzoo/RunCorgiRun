@@ -8,6 +8,10 @@ public class CorgiVisual : MonoBehaviour
     [Header("Sprites")]
     [SerializeField] private Sprite normalSprite;
     [SerializeField] private Sprite drunkSprite;
+
+    [Header("Particles")]
+    [SerializeField] private ParticleSystem drunkParticles;
+    [SerializeField] private ParticleSystem plasteredParticles;
     
     private SpriteRenderer spriteRenderer;
 
@@ -23,14 +27,19 @@ public class CorgiVisual : MonoBehaviour
         if (newState == Corgi.States.Normal)
         {
             spriteRenderer.sprite = normalSprite;
+            drunkParticles.Stop();
+            plasteredParticles.Stop();
         }
         else if (newState == Corgi.States.Drunk)
         {
             spriteRenderer.sprite = drunkSprite;
+            drunkParticles.Play();
         }
         else if (newState == Corgi.States.Plastered)
         {
             spriteRenderer.sprite = drunkSprite;
+            drunkParticles.Stop();
+            plasteredParticles.Play();
         }
     }
 

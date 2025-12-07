@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Particles_8
+      name: Potion_1
       rect:
         serializedVersion: 2
         x: 192
@@ -176,7 +176,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Particles_11
+      name: Sparkly_1
       rect:
         serializedVersion: 2
         x: 216
@@ -198,7 +198,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Particles_27
+      name: Potion_2
       rect:
         serializedVersion: 2
         x: 192
@@ -264,7 +264,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Particles_30
+      name: Sparkly_2
       rect:
         serializedVersion: 2
         x: 216
@@ -286,7 +286,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Particles_48
+      name: Potion_3
       rect:
         serializedVersion: 2
         x: 192
@@ -352,7 +352,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Particles_51
+      name: Sparkly_3
       rect:
         serializedVersion: 2
         x: 216
@@ -374,7 +374,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Particles_62
+      name: Potion_4
       rect:
         serializedVersion: 2
         x: 192
@@ -440,7 +440,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Particles_65
+      name: Sparkly_4
       rect:
         serializedVersion: 2
         x: 216
@@ -462,7 +462,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Particles_78
+      name: Potion_5
       rect:
         serializedVersion: 2
         x: 192
@@ -528,7 +528,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Particles_81
+      name: Sparkly_5
       rect:
         serializedVersion: 2
         x: 216
@@ -572,7 +572,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Particles_98
+      name: Potion_6
       rect:
         serializedVersion: 2
         x: 192
@@ -638,7 +638,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Particles_101
+      name: Sparkly_6
       rect:
         serializedVersion: 2
         x: 216
@@ -660,7 +660,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Particles_121
+      name: Potion_7
       rect:
         serializedVersion: 2
         x: 192
@@ -682,7 +682,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Particles_122
+      name: Heart
       rect:
         serializedVersion: 2
         x: 200
@@ -726,7 +726,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Particles_124
+      name: Sparkly_7
       rect:
         serializedVersion: 2
         x: 216
@@ -748,7 +748,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Particles_143
+      name: Potion_8
       rect:
         serializedVersion: 2
         x: 192
@@ -814,7 +814,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Particles_146
+      name: Sparkly_8
       rect:
         serializedVersion: 2
         x: 216
@@ -902,7 +902,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Particles_157
+      name: Sparkly_9
       rect:
         serializedVersion: 2
         x: 216
@@ -990,7 +990,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Particles_174
+      name: Sparkly_10
       rect:
         serializedVersion: 2
         x: 216
@@ -1078,7 +1078,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Particles_192
+      name: Sparkly_11
       rect:
         serializedVersion: 2
         x: 216
@@ -1166,7 +1166,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Particles_208
+      name: Sparkly_12
       rect:
         serializedVersion: 2
         x: 216
@@ -1988,7 +1988,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2010,7 +2010,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2032,7 +2032,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2054,7 +2054,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2076,7 +2076,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2098,7 +2098,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2120,7 +2120,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2142,7 +2142,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2164,7 +2164,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2186,7 +2186,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2208,7 +2208,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2230,7 +2230,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2252,7 +2252,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2274,7 +2274,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2296,7 +2296,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2318,7 +2318,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2340,7 +2340,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2369,11 +2369,11 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":8.0,"y":8.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
+      Heart: 1807597434
       Particles_0: 1295276921
       Particles_1: -827599976
       Particles_10: 565647881
       Particles_100: -1732879314
-      Particles_101: 330197331
       Particles_102: -309803430
       Particles_103: 344356555
       Particles_104: -1638177324
@@ -2382,7 +2382,6 @@ TextureImporter:
       Particles_107: 1774983393
       Particles_108: 1118155408
       Particles_109: -448947505
-      Particles_11: 1333127679
       Particles_110: -1543898422
       Particles_111: 1554236992
       Particles_112: 170721243
@@ -2395,10 +2394,7 @@ TextureImporter:
       Particles_119: -144658178
       Particles_12: -2081662026
       Particles_120: -467654836
-      Particles_121: -1337272929
-      Particles_122: 1807597434
       Particles_123: -676986476
-      Particles_124: 1543374703
       Particles_125: -1985629449
       Particles_126: 1318197922
       Particles_127: -908892495
@@ -2419,10 +2415,8 @@ TextureImporter:
       Particles_140: 1630161090
       Particles_141: 140500858
       Particles_142: -1166685752
-      Particles_143: 1298218626
       Particles_144: 1967347495
       Particles_145: 287622087
-      Particles_146: 224447057
       Particles_147: 582171578
       Particles_148: -935417138
       Particles_149: 1722685077
@@ -2434,7 +2428,6 @@ TextureImporter:
       Particles_154: -44090872
       Particles_155: 65679074
       Particles_156: -219370814
-      Particles_157: 1485465662
       Particles_158: -1901922841
       Particles_159: 201717322
       Particles_16: -1601082338
@@ -2453,7 +2446,6 @@ TextureImporter:
       Particles_171: -1253503313
       Particles_172: -1727232002
       Particles_173: -1228719990
-      Particles_174: 1450175919
       Particles_175: 1142483502
       Particles_176: 581951881
       Particles_177: -1326118962
@@ -2473,7 +2465,6 @@ TextureImporter:
       Particles_19: 1854037387
       Particles_190: -2127887569
       Particles_191: 870824025
-      Particles_192: -1668750037
       Particles_193: 1490489409
       Particles_194: -763783979
       Particles_195: 63554663
@@ -2491,7 +2482,6 @@ TextureImporter:
       Particles_205: 684716153
       Particles_206: 1673712652
       Particles_207: 1657252429
-      Particles_208: -846192371
       Particles_209: 1232524238
       Particles_21: 53279895
       Particles_210: -933291878
@@ -2559,7 +2549,6 @@ TextureImporter:
       Particles_267: 1381665828
       Particles_268: 212136070
       Particles_269: 1755303569
-      Particles_27: -724476478
       Particles_270: -539621582
       Particles_271: 1687495637
       Particles_272: -760744451
@@ -2593,7 +2582,6 @@ TextureImporter:
       Particles_298: 2004549432
       Particles_299: -1804929217
       Particles_3: 1614771563
-      Particles_30: 2137141440
       Particles_300: 1585392132
       Particles_301: 1792585224
       Particles_302: 1847420053
@@ -2643,11 +2631,9 @@ TextureImporter:
       Particles_45: 1237353471
       Particles_46: -1571639944
       Particles_47: 907027900
-      Particles_48: 744793680
       Particles_49: 1078422519
       Particles_5: 1647380853
       Particles_50: -470421667
-      Particles_51: 692272231
       Particles_52: -671455047
       Particles_53: -100464517
       Particles_54: -1702408374
@@ -2659,10 +2645,8 @@ TextureImporter:
       Particles_6: -119147449
       Particles_60: 396713704
       Particles_61: 69812789
-      Particles_62: 46120947
       Particles_63: -1720015057
       Particles_64: -810061045
-      Particles_65: 1380605312
       Particles_66: 1362556191
       Particles_67: 1374554089
       Particles_68: -1922961989
@@ -2676,11 +2660,8 @@ TextureImporter:
       Particles_75: -1581866023
       Particles_76: -695311678
       Particles_77: -60531645
-      Particles_78: 1513806837
       Particles_79: 865229728
-      Particles_8: 1801255192
       Particles_80: 1246068283
-      Particles_81: 1890138152
       Particles_82: -928075123
       Particles_83: -89109519
       Particles_84: -1964878488
@@ -2698,8 +2679,27 @@ TextureImporter:
       Particles_95: 867161656
       Particles_96: -840255262
       Particles_97: 2052163989
-      Particles_98: 168738357
       Particles_99: -1770439016
+      Potion_1: 1801255192
+      Potion_2: -724476478
+      Potion_3: 744793680
+      Potion_4: 46120947
+      Potion_5: 1513806837
+      Potion_6: 168738357
+      Potion_7: -1337272929
+      Potion_8: 1298218626
+      Sparkly_1: 1333127679
+      Sparkly_10: 1450175919
+      Sparkly_11: -1668750037
+      Sparkly_12: -846192371
+      Sparkly_2: 2137141440
+      Sparkly_3: 692272231
+      Sparkly_4: 1380605312
+      Sparkly_5: 1890138152
+      Sparkly_6: 330197331
+      Sparkly_7: 1543374703
+      Sparkly_8: 224447057
+      Sparkly_9: 1485465662
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
