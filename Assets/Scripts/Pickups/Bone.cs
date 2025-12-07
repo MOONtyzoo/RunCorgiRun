@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Bone : Pickup
 {
-    public void Start() {
-        lifetime = GameParameters.BoneLifetime;
+    public void Start()
+    {
+        lifetime = scriptableObject.Lifetime;
     }
 }
 

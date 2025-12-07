@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Pill : Pickup
 {
-    public void Start() {
-        lifetime = GameParameters.PillLifetime;
+    public void Start()
+    {
+        lifetime = scriptableObject.Lifetime;
     }
 }

@@ -6,9 +6,10 @@ using UnityEngine;
 public class MoonshinePlacer : RandomObjectPlacer
 {
     float cooldownMultiplier = 1.0f;
+    private MoonshineSo MoonshineSettings => (MoonshineSo)scriptableObject;
 
     public void Start() {
-        spawnCooldownRange = GameParameters.MoonshineSpawnerCooldownRange;
+        spawnCooldownRange = scriptableObject.SpawnerCooldownRange;
         StartCoroutine(ObjectSpawner());
     }
 
@@ -24,6 +25,6 @@ public class MoonshinePlacer : RandomObjectPlacer
 
     public void UpdateCooldownMultiplier() {
         float timerProgress = Game.Instance.GetTimerProgressPercentage();
-        cooldownMultiplier = (1-timerProgress)*1.0f + timerProgress*GameParameters.MoonshineCooldownMultiplierAtGameEnd;
+        cooldownMultiplier = (1 - timerProgress) * 1.0f + timerProgress * MoonshineSettings.CooldownMultiplierAtGameEnd;
     }
 }

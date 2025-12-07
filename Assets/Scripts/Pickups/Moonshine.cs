@@ -5,10 +5,11 @@ using UnityEngine;
 public class Moonshine : Pickup
 {
     float fallSpeed;
+    private MoonshineSo MoonshineSettings => (MoonshineSo)scriptableObject;
     void Start()
     {
-        fallSpeed = GameParameters.MoonshineFallSpeed;
-        lifetime = GameParameters.MoonshineLifetime;
+        fallSpeed = MoonshineSettings.FallSpeed;
+        lifetime = scriptableObject.Lifetime;
     }
 
     protected override void Update()

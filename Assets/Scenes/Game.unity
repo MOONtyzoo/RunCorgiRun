@@ -658,6 +658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectPrefab: {fileID: 3284137195403497548, guid: 4d1ccd74c42c5e44fb21ff90a66d241f, type: 3}
+  scriptableObject: {fileID: 11400000, guid: 75bdf40aea04e424283753bb23004da3, type: 2}
 --- !u!4 &793563591
 Transform:
   m_ObjectHideFlags: 0
@@ -686,6 +687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectPrefab: {fileID: 700416219604595528, guid: 52df7f5568caf994e9608cf25ec10aae, type: 3}
+  scriptableObject: {fileID: 11400000, guid: 5f5be056627934fd1af7e9af5b51a852, type: 2}
 --- !u!114 &793563593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -699,6 +701,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectPrefab: {fileID: 1790951066413676859, guid: 133ccbde29b8cd445af03c4ed6a4bb65, type: 3}
+  scriptableObject: {fileID: 11400000, guid: 551196d23866240999378fdae7bf5055, type: 2}
 --- !u!114 &793563594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -712,6 +715,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectPrefab: {fileID: 8729195040879827248, guid: 477d8bb68f609594e831bfd60c3149d4, type: 3}
+  scriptableObject: {fileID: 11400000, guid: 58231c9ec1d8a4ce1a3d970db3fcb689, type: 2}
 --- !u!114 &793563595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -725,6 +729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectPrefab: {fileID: 8162731777484382828, guid: b79ec27c0c102b24893c48e14ebfeb39, type: 3}
+  scriptableObject: {fileID: 11400000, guid: 2a0cbbe35aa7b4b40b6ebcebff83c91a, type: 2}
 --- !u!1 &862240917
 GameObject:
   m_ObjectHideFlags: 0
@@ -835,6 +840,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 862240918}
   normalSprite: {fileID: 21300000, guid: 0546157fe52f78145aa6e1c0dac21450, type: 3}
   drunkSprite: {fileID: 21300000, guid: 3a411a3647b9ac54f9245d1d4026c363, type: 3}
+  playerParameters: {fileID: 11400000, guid: af018850bdd534ee49edbddd1e1e9012, type: 2}
 --- !u!50 &862240921
 Rigidbody2D:
   serializedVersion: 5
@@ -1695,6 +1701,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 2038438319}
+  gameParameters: {fileID: 11400000, guid: 20ea26a9d5fb34204a2d680913191bab, type: 2}
 --- !u!4 &1910619170
 Transform:
   m_ObjectHideFlags: 0

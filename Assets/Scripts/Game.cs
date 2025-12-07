@@ -7,12 +7,14 @@ public class Game : MonoBehaviour
     public static Game Instance {get; private set;}
 
     [SerializeField] private UI ui;
+    [SerializeField] private GameParameters gameParameters;
+
 
     private int score;
 
     private int secondsInGame;
     private Coroutine gameplayTimerCoroutine;
-
+    
     void Awake() {
         if (Instance == null) {
             Instance = this;
@@ -33,7 +35,7 @@ public class Game : MonoBehaviour
     }
 
     private IEnumerator gameTimer() {
-        while (secondsInGame < GameParameters.GameplayDuration) {
+        while (secondsInGame < gameParameters.GameplayDuration) {
             yield return new WaitForSeconds(1);
             SetSecondsInGame(secondsInGame + 1);
         }
@@ -59,10 +61,10 @@ public class Game : MonoBehaviour
 
     public void SetSecondsInGame(int newSecondsInGame) {
         secondsInGame = newSecondsInGame;
-        ui.UpdateTimerText(GameParameters.GameplayDuration - secondsInGame);
+        ui.UpdateTimerText(gameParameters.GameplayDuration - secondsInGame);
     }
 
     public float GetTimerProgressPercentage() {
-        return (float)secondsInGame/GameParameters.GameplayDuration;
+        return (float)secondsInGame/gameParameters.GameplayDuration;
     }
 }
