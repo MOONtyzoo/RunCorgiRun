@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class Poop : Pickup
 {
-    public void Start() {
-        lifetime = GameParameters.PoopLifetime;
+    public void Start()
+    {
+        lifetime = scriptableObject.Lifetime;
     }
 }

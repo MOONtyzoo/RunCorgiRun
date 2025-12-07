@@ -24,13 +24,14 @@ public class Corgi : MonoBehaviour
     private Vector2 lastRandomMoveDirection = Vector2.zero;
     private float randomMoveCountdownLength = 0.1f;
     private float randomMoveCounter = 0.0f;
+    [SerializeField] private PlayerParameters playerParameters;
 
     void Start()
     {
-        moveSpeed = GameParameters.CorgiMoveSpeed;
-        drunkenMoveSpeed = GameParameters.CorgiDrunkenMoveSpeed;
-        plasteredMoveSpeed = GameParameters.CorgiPlasteredMoveSpeed;
-        drunkSeconds = GameParameters.CorgiDrunkSeconds;
+        moveSpeed = playerParameters.CorgiMoveSpeed;
+        drunkenMoveSpeed = playerParameters.CorgiDrunkenMoveSpeed;
+        plasteredMoveSpeed = playerParameters.CorgiPlasteredMoveSpeed;
+        drunkSeconds = playerParameters.CorgiDrunkSeconds;
     }
 
     void Update()

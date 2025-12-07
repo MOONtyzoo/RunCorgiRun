@@ -5,6 +5,7 @@ using UnityEngine;
 public class Pickup : MonoBehaviour
 {
     public SpriteRenderer sprite;
+    public PlaceableSoBase scriptableObject;
     protected float lifetime;
 
     protected virtual void Update()

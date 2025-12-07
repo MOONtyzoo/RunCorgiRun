@@ -5,6 +5,6 @@ using UnityEngine;
 public class Beer : Pickup
 {
     public void Start() {
-        lifetime = GameParameters.BeerLifetime;
+        lifetime = scriptableObject.Lifetime;
     }
 }

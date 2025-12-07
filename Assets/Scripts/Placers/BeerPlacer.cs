@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class BeerPlacer : RandomObjectPlacer
 {
-    public void Start() {
-        spawnCooldownRange = GameParameters.BeerSpawnerCooldownRange;
+    public void Start()
+    {
+        spawnCooldownRange = scriptableObject.SpawnerCooldownRange;
         StartCoroutine(ObjectSpawner());
     }
 }

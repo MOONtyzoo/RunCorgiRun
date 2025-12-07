@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class BonePlacer : RandomObjectPlacer
 {
-    public void Start() {
-        spawnCooldownRange = GameParameters.BoneSpawnerCooldownRange;
+    public void Start()
+    {
+        spawnCooldownRange = scriptableObject.SpawnerCooldownRange;
         StartCoroutine(ObjectSpawner());
     }
 }

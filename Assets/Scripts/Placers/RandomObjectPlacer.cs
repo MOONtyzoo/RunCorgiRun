@@ -5,6 +5,7 @@ using UnityEngine;
 public class RandomObjectPlacer : MonoBehaviour
 {
     public Object objectPrefab;
+    public PlaceableSoBase scriptableObject;
     protected NumberRange spawnCooldownRange;
 
     public void Place(Vector2 position) {

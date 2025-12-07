@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PillPlacer : RandomObjectPlacer
 {
-    public void Start() {
-        spawnCooldownRange = GameParameters.PillSpawnerCooldownRange;
+    public void Start()
+    {
+        spawnCooldownRange = scriptableObject.SpawnerCooldownRange;
         StartCoroutine(ObjectSpawner());
     }
 }
