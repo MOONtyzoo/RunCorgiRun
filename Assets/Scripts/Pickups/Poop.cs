@@ -10,4 +10,6 @@ public class Poop : Pickup
     {
         lifetime = scriptableObject.Lifetime;
     }
+
+    public override void PickUp() { }
 }
