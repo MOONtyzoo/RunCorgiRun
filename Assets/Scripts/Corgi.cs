@@ -36,15 +36,16 @@ public class Corgi : MonoBehaviour
         if (other.CompareTag("Beer")) 
         {
             GetDrunk();
+            OnPickUp?.Invoke("Beer");
         }
         else if (other.CompareTag("Moonshine")) 
         {
             GetPlastered();
+            OnPickUp?.Invoke("Moonshine");
         }
         else if (other.CompareTag("Pill")) 
         {
             SoberUp();
-            
             OnPickUp?.Invoke("Pill");
         }
         else if (other.CompareTag("Bone")) 

@@ -21574,6 +21574,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2078547563}
+  - component: {fileID: 2078547564}
   m_Layer: 0
   m_Name: Sounds
   m_TagString: Untagged
@@ -21596,6 +21597,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 862240919}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2078547564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078547562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd30280c6fdc3744c876b929f5589604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CorgiSounds
+  corgi: {fileID: 862240920}
+  boneSound: {fileID: 8300000, guid: 8569f76780003a94995289083e34f1c1, type: 3}
+  beerSound: {fileID: 8300000, guid: b8fbab929b3e5b747b08e47ba01ad9a1, type: 3}
+  pillSound: {fileID: 8300000, guid: cf906dd78024903469d9ee8bd82b7c56, type: 3}
+  moonshineSound: {fileID: 8300000, guid: 919de549353e8634f991b29f672b6054, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
