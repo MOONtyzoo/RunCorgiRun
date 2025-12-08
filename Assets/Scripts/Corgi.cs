@@ -5,6 +5,7 @@ using UnityEngine;
 public class Corgi : MonoBehaviour
 {
     public event Action<States, States> OnStateChanged;
+    public event Action<int> OnScoreChanged;
 
     [SerializeField] private PlayerParameters playerParameters;
     
@@ -50,7 +51,7 @@ public class Corgi : MonoBehaviour
         }
         else if (other.CompareTag("Bone")) 
         {
-            Game.Instance.AddScore(1);
+            OnScoreChanged?.Invoke(1);
         }
 
         if (other.TryGetComponent(out Pickup pickup)) {

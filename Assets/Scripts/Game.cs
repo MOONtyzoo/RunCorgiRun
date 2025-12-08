@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,9 +6,15 @@ using UnityEngine;
 public class Game : MonoBehaviour
 {
     public static Game Instance {get; private set;}
+    public event Action<int> OnSecondPassed;
+    public event Action OnGameStart;
+    public event Action OnGameOver;
+    
+    
 
     [SerializeField] private UI ui;
     [SerializeField] private GameParameters gameParameters;
+    [SerializeField] private Corgi player;
 
 
     private int score;
@@ -25,21 +32,30 @@ public class Game : MonoBehaviour
 
     void Start()
     {
+        OnGameStart += StartSetup;
+        OnGameOver += EndGame;
+        player.OnScoreChanged += UpdateScore;
         StartGame();        
     }
 
-    public void StartGame() {
-        SetScore(0);
-        SetSecondsInGame(0);
+    private void StartGame() {
+        OnGameStart?.Invoke();
+        OnSecondPassed?.Invoke(0);
+    }
+
+    private void StartSetup()
+    {
+        UpdateScore(0);
         StartCoroutine(gameTimer());
     }
 
     private IEnumerator gameTimer() {
         while (secondsInGame < gameParameters.GameplayDuration) {
             yield return new WaitForSeconds(1);
-            SetSecondsInGame(secondsInGame + 1);
+            OnSecondPassed?.Invoke(secondsInGame + 1);
+            secondsInGame++;
         }
-        EndGame();
+        OnGameOver?.Invoke();
     }
 
     private void EndGame() {
@@ -50,18 +66,9 @@ public class Game : MonoBehaviour
         SceneLoader.Load(SceneLoader.Scene.GameOverMenu);
     }
 
-    public void AddScore(int amount) {
-        SetScore(score + amount);
-    }
-
-    public void SetScore(int newScore) {
-        score = newScore;
-        ui.UpdateScoreText(score);
-    }
-
-    public void SetSecondsInGame(int newSecondsInGame) {
-        secondsInGame = newSecondsInGame;
-        ui.UpdateTimerText(gameParameters.GameplayDuration - secondsInGame);
+    private void UpdateScore(int newScore)
+    {
+        score += newScore;
     }
 
     public float GetTimerProgressPercentage() {

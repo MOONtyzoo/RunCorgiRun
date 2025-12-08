@@ -1701,6 +1701,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ui: {fileID: 2038438319}
   gameParameters: {fileID: 11400000, guid: 20ea26a9d5fb34204a2d680913191bab, type: 2}
+  player: {fileID: 862240920}
 --- !u!4 &1910619170
 Transform:
   m_ObjectHideFlags: 0
@@ -1836,6 +1837,7 @@ MonoBehaviour:
   timerText: {fileID: 1441423744}
   debugStateText: {fileID: 1649421195}
   player: {fileID: 862240920}
+  game: {fileID: 1910619169}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
