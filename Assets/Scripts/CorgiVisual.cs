@@ -8,12 +8,21 @@ public class CorgiVisual : MonoBehaviour
     [Header("Sprites")]
     [SerializeField] private Sprite normalSprite;
     [SerializeField] private Sprite drunkSprite;
+    [SerializeField] private Color normalColorTint;
+    [SerializeField] private Color plasteredColorTint;
 
     [Header("Particles")]
     [SerializeField] private ParticleSystem drunkParticles;
     [SerializeField] private ParticleSystem plasteredParticles;
     [SerializeField] private ParticleSystem pillParticles;
     [SerializeField] private ParticleSystem boneParticles;
+    
+    [Header("Trail")]
+    [SerializeField] private TrailRenderer trailRenderer;
+
+    [SerializeField] private Color normalTrailColor;
+    [SerializeField] private Color drunkTrailColor;
+    [SerializeField] private Color plasteredTrailColor;
     
     private SpriteRenderer spriteRenderer;
 
@@ -30,19 +39,25 @@ public class CorgiVisual : MonoBehaviour
         if (newState == Corgi.States.Normal)
         {
             spriteRenderer.sprite = normalSprite;
+            spriteRenderer.color = normalColorTint;
             drunkParticles.Stop();
             plasteredParticles.Stop();
+            SetTrailColor(normalTrailColor);
         }
         else if (newState == Corgi.States.Drunk)
         {
             spriteRenderer.sprite = drunkSprite;
+            spriteRenderer.color = normalColorTint;
             drunkParticles.Play();
+            SetTrailColor(drunkTrailColor);
         }
         else if (newState == Corgi.States.Plastered)
         {
             spriteRenderer.sprite = drunkSprite;
+            spriteRenderer.color = plasteredColorTint;
             drunkParticles.Stop();
             plasteredParticles.Play();
+            SetTrailColor(plasteredTrailColor);
         }
     }
 
@@ -69,5 +84,11 @@ public class CorgiVisual : MonoBehaviour
         } else if (moveDir.x < 0) {
             spriteRenderer.flipX = true;
         }
+    }
+
+    private void SetTrailColor(Color color)
+    {
+        trailRenderer.startColor = color;
+        trailRenderer.endColor = color;
     }
 }
