@@ -12,17 +12,25 @@ public class UI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI debugStateText;
 
     [SerializeField] private Corgi player;
+    [SerializeField] private Game game;
+    
+    private int score;
 
     private void Awake()
     {
         player.OnStateChanged += OnPlayerStateChanged;
+        player.OnScoreChanged += UpdateScoreText;
+        game.OnSecondPassed += UpdateTimerText;
+        UpdateScoreText(0);
+
     }
 
-    public void UpdateScoreText(int score) {
+    private void UpdateScoreText(int addedScore) {
+        score += addedScore;
         scoreText.text = "Score: " + score;
     }
 
-    public void UpdateTimerText(int timeInSeconds) {
+    private void UpdateTimerText(int timeInSeconds) {
         int seconds = timeInSeconds % 60;
         int minutes = (timeInSeconds) / 60;
 
