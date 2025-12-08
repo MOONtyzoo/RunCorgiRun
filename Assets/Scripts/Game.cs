@@ -56,6 +56,7 @@ public class Game : MonoBehaviour
 
     public void SetScore(int newScore) {
         score = newScore;
+        score = Mathf.Clamp(score, 0, int.MaxValue);
         ui.UpdateScoreText(score);
     }
 

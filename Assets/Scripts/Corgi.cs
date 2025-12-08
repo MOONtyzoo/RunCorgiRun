@@ -41,6 +41,8 @@ public class Corgi : MonoBehaviour
         else if (other.CompareTag("Moonshine")) 
         {
             GetPlastered();
+            Game.Instance.AddScore(-5);
+            ScoreFloaterSpawner.Instance.SpawnScoreFloater(other.transform.position, -5);
             OnPickUp?.Invoke("Moonshine");
         }
         else if (other.CompareTag("Pill")) 
@@ -48,9 +50,11 @@ public class Corgi : MonoBehaviour
             SoberUp();
             OnPickUp?.Invoke("Pill");
         }
-        else if (other.CompareTag("Bone")) 
+        else if (other.CompareTag("Bone"))
         {
-            Game.Instance.AddScore(1);
+            int scoreGain = state == States.Drunk ? 2 : 1;
+            Game.Instance.AddScore(scoreGain);
+            ScoreFloaterSpawner.Instance.SpawnScoreFloater(other.transform.position, scoreGain);
             OnPickUp?.Invoke("Bone");
         }
 
