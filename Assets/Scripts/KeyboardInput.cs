@@ -15,15 +15,18 @@ public class KeyboardInput : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow)) movementInput += Vector2.left;
         if (Input.GetKey(KeyCode.RightArrow)) movementInput += Vector2.right;
         movementInput.Normalize();
-        
-        corgi.Move(movementInput);
 
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            poopPlacer.Place(corgi.transform.position);
-        }
+        new MoveCommand(corgi, movementInput).Execute();
 
-        if (Input.GetKeyDown(KeyCode.Q)) {
-            Application.Quit();
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            new PlacePoopCommand(poopPlacer, corgi.transform).Execute();
+
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                new QuitCommand().Execute();
+            }
         }
     }
 }
