@@ -19,14 +19,14 @@ public class UI : MonoBehaviour
     private void Awake()
     {
         player.OnStateChanged += OnPlayerStateChanged;
-        player.OnScoreChanged += UpdateScoreText;
+        game.OnScoreChanged += UpdateScoreText;
         game.OnSecondPassed += UpdateTimerText;
         UpdateScoreText(0);
 
     }
 
-    private void UpdateScoreText(int addedScore) {
-        score += addedScore;
+    private void UpdateScoreText(int newScore) {
+        score = newScore;
         scoreText.text = "Score: " + score;
     }
 

@@ -7,7 +7,6 @@ public class Corgi : MonoBehaviour
     public event Action<States, States> OnStateChanged;
     public event Action<Vector2> OnMoved;
     public event Action<string> OnPickUp;
-    public event Action<int> OnScoreChanged;
 
     [SerializeField] private PlayerParameters playerParameters;
     
@@ -57,7 +56,6 @@ public class Corgi : MonoBehaviour
             Game.Instance.AddScore(scoreGain);
             ScoreFloaterSpawner.Instance.SpawnScoreFloater(other.transform.position, scoreGain);
             OnPickUp?.Invoke("Bone");
-            OnScoreChanged?.Invoke(1);
         }
 
         if (other.TryGetComponent(out Pickup pickup)) {

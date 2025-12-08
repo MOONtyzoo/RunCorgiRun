@@ -7,6 +7,7 @@ public class Game : MonoBehaviour
 {
     public static Game Instance {get; private set;}
     public event Action<int> OnSecondPassed;
+    public event Action<int> OnScoreChanged;
     public event Action OnGameStart;
     public event Action OnGameOver;
     
@@ -34,7 +35,6 @@ public class Game : MonoBehaviour
     {
         OnGameStart += StartSetup;
         OnGameOver += EndGame;
-        player.OnScoreChanged += UpdateScore;
         StartGame();        
     }
 
@@ -45,7 +45,7 @@ public class Game : MonoBehaviour
 
     private void StartSetup()
     {
-        UpdateScore(0);
+        SetScore(0);
         StartCoroutine(gameTimer());
     }
 
@@ -70,15 +70,10 @@ public class Game : MonoBehaviour
         SetScore(score + amount);
     }
 
-    public void SetScore(int newScore) {
+    private void SetScore(int newScore) {
         score = newScore;
         score = Mathf.Clamp(score, 0, int.MaxValue);
-        ui.UpdateScoreText(score);
-    }
-
-    public void SetSecondsInGame(int newSecondsInGame) {
-        secondsInGame = newSecondsInGame;
-        ui.UpdateTimerText(gameParameters.GameplayDuration - secondsInGame);
+        OnScoreChanged?.Invoke(score);
     }
 
     public float GetTimerProgressPercentage() {
